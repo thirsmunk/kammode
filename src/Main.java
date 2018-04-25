@@ -1,4 +1,6 @@
 import Controller.MainController;
+import DBConnection.DB;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,25 +8,16 @@ public class Main {
     public static void main(String args[]) {
         MainController mc = new MainController();
         Scanner sc = new Scanner(System.in);
+        DB db = new DB();
 
-        System.out.println("*****Velkommen til KAMMODE.COM*****");
-        System.out.println("Vaelg en af foelgende muligheder:");
-        System.out.println("1. Eksisterende kunde? Log ind");
-        System.out.println("2. Se udbudte varer");
+        System.out.println("*****Welcome to KAMMODE.COM*****");
+        System.out.println("Choose one of the following options:");
+        System.out.println("1. Existing customer? View your orders");
+        System.out.println("2. View shop");
 
         int i = sc.nextInt();
 
-        if (i == 1) {
-            String navn;
-            System.out.println("Indtast dit navn for at logge ind");
-            navn = sc.next();
-            //Go to log-in
-            mc.logIn(navn);
-        } else if (i == 2) {
-            //Show wares
-        } else {
-            System.out.println("Du skal taste 1 eller 2!");
-        }
+        //If i == 1 or 2...
 
 
     }
