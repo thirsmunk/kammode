@@ -1,6 +1,4 @@
 import Controller.MainController;
-import DBConnection.DB;
-
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +6,6 @@ public class Main {
     public static void main(String args[]) {
         MainController mc = new MainController();
         Scanner sc = new Scanner(System.in);
-        DB db = new DB();
 
         System.out.println("*****Welcome to KAMMODE.COM*****");
         System.out.println("Choose one of the following options:");
