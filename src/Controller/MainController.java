@@ -1,34 +1,50 @@
 package Controller;
 
-import Model.Kunde;
-import Model.Ordre;
+import DBConnection.DB;
+import Model.Customer;
+import Model.Order;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainController {
 
-    ArrayList<Ordre> ordre = new ArrayList<>();
-    Scanner sc = new Scanner(System.in);
-    Kunde kunde1 = new Kunde("Lasse", 'm', 21, ordre);
-    public void logIn(String navn) {
-        if(navn.equals(kunde1.getNavn())) {
-            System.out.println("Velkommen, " + kunde1.getNavn());
-            System.out.println("Du har nu foelgende valgmuligheder:");
-            System.out.println("1. Aendr dit navn");
-            System.out.println("2. Foobar");
+    Scanner sc;
+    PantController pc;
+    DB db;
 
-            int choice = sc.nextInt();
+    public MainController() {
+        sc = new Scanner(System.in);
+        db = new DB();
+        pc = new PantController(db, sc);
+    }
 
-            if(choice == 1) {
-                String nytNavn;
-                System.out.println("Vaelg dit nye navn");
-                nytNavn = sc.next();
-                System.out.println("Dit nye navn opdateres i systemet...");
-                kunde1.setNavn(nytNavn);
-                System.out.println("Dit navn er nu opdateret, " + kunde1.getNavn());
-            }
+    public void run() {
+
+        System.out.println("*****Welcome to KAMMODE.COM*****");
+        System.out.println("1 = ***MENU***");
+        System.out.println("2 = ***CART***");
+        System.out.println("3 = ***Jackets***");
+        System.out.println("4 = ***Suits***");
+        System.out.println("5 = ***Pants*** - Vertical");
+
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1: //Show menu
+                break;
+            case 2: //Show cart
+                break;
+            case 3: //Show Jackets
+                break;
+            case 4: //Show Suits
+                break;
+            case 5: pc.showPants();
+                break;
+            default: System.out.println("You didn't select a number from 1-4");
+                break;
         }
+    }
+
 
     }
-}
+
