@@ -12,10 +12,10 @@ public class PantController {
     DB db;
     Scanner sc;
 
-    //Constructor receiving objects from MainController and transferring values
-    public PantController(DB db, Scanner sc) {
+    //Constructor receiving db-object from MainController
+    public PantController(DB db) {
         this.db = db;
-        this.sc = sc;
+        this.sc = new Scanner(System.in);
 
     }
 
@@ -27,7 +27,7 @@ public class PantController {
         int productId = 1;
         int amount=0;
 
-        //consoleView?
+        //ConsoleView?
         System.out.println("#" + "\t" + "Name \t\t\t\t\t Description \t\t\t\t Price \t\t\t In stock?");
         for(Product p : products) {
             if (p.getStock() > 0) {
@@ -36,7 +36,7 @@ public class PantController {
             System.out.println(productId++ + "\t" + p.getProductName() + "\t " + p.getProductDescription() + "\t " + p.getProductPrice() + "\t\t\t " + stockStatus);
         }
 
-        //consoleView
+        //ConsoleView
         System.out.println("Select a product, choose #");
 
         int choice = sc.nextInt();

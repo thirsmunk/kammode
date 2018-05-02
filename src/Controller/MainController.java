@@ -3,35 +3,26 @@ package Controller;
 import DBConnection.DB;
 import Model.Customer;
 import Model.Order;
-
-import java.util.Scanner;
+import View.ConsoleView;
 
 public class MainController {
 
     //Declare variables for use in the system
-    Scanner sc;
     PantController pc;
     DB db;
+    ConsoleView cw;
 
     //Constructor for MainController, initializing objects
     public MainController() {
-        sc = new Scanner(System.in);
         db = new DB();
-        //Transmits the two initialized objects to the PantController class
-        pc = new PantController(db, sc);
+        cw = new ConsoleView();
+        //Transmits initialized object to the PantController class
+        pc = new PantController(db);
     }
-    //Takes an integer as parameter from the consoleView
-    public void run() {
-        //consoleView
-        System.out.println("*****Welcome to KAMMODE.COM*****");
-        System.out.println("1 = ***MENU***");
-        System.out.println("2 = ***CART***");
-        System.out.println("3 = ***Jackets***");
-        System.out.println("4 = ***Suits***");
-        System.out.println("5 = ***Pants*** - Vertical");
 
-        //Revise
-        int choice = sc.nextInt();
+    public void run() {
+
+        int choice = cw.welcome();
 
         switch (choice) {
             case 1: //Show menu
