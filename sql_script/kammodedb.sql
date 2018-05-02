@@ -26,7 +26,7 @@ CREATE TABLE `customers` (
   `idcustomers` int(11) NOT NULL AUTO_INCREMENT,
   `customerfirstname` varchar(45) NOT NULL,
   `customerlastname` varchar(45) NOT NULL,
-  `customerage` int(11) NOT NULL,
+  `customeremail` varchar(45) NOT NULL,
   PRIMARY KEY (`idcustomers`),
   UNIQUE KEY `idcustomers_UNIQUE` (`idcustomers`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
@@ -38,7 +38,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (5,'Lasse','Munk',21),(6,'Iben','Foldager',22),(7,'Lucas','Weje',23),(8,'Daniel','Gutfeld',24);
+INSERT INTO `customers` VALUES (5,'Lasse','Munk',''),(6,'Iben','Foldager',''),(7,'Lucas','Weje',''),(8,'Daniel','Gutfeld','');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +94,7 @@ CREATE TABLE `product_category` (
 
 LOCK TABLES `product_category` WRITE;
 /*!40000 ALTER TABLE `product_category` DISABLE KEYS */;
-INSERT INTO `product_category` VALUES (1,'Copenhagen Long Pant','Men\"s Long Pant Slim Fit',999,50);
+INSERT INTO `product_category` VALUES (1,'Copenhagen Long Pant','Men\"s Long Pant Slim Fit',550,50);
 /*!40000 ALTER TABLE `product_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-25 13:44:58
+-- Dump completed on 2018-05-02  9:47:12
