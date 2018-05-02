@@ -26,6 +26,10 @@ public class DB {
         }
     }
 
+    /**
+     * Dives into the database and retrieves the SQL table and turns it into an ArrayList
+     * @return the pants in the DB (arraylist)
+     */
     public ArrayList<Product> getProducts() {
     ResultSet resultSet = null;
     ArrayList<Product> products = new ArrayList<>();
@@ -50,6 +54,10 @@ public class DB {
     return products;
     }
 
+    /**
+     * Subtracts the amount of pants purchased from the stock
+     * @param amount amount of pants the customer purchased
+     */
     public void productPurchased(int amount) {
 
         try {

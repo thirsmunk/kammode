@@ -8,18 +8,21 @@ import java.util.Scanner;
 
 public class MainController {
 
+    //Declare variables for use in the system
     Scanner sc;
     PantController pc;
     DB db;
 
+    //Constructor for MainController, initializing objects
     public MainController() {
         sc = new Scanner(System.in);
         db = new DB();
+        //Transmits the two initialized objects to the PantController class
         pc = new PantController(db, sc);
     }
-
+    //Takes an integer as parameter from the consoleView
     public void run() {
-
+        //consoleView
         System.out.println("*****Welcome to KAMMODE.COM*****");
         System.out.println("1 = ***MENU***");
         System.out.println("2 = ***CART***");
@@ -27,6 +30,7 @@ public class MainController {
         System.out.println("4 = ***Suits***");
         System.out.println("5 = ***Pants*** - Vertical");
 
+        //Revise
         int choice = sc.nextInt();
 
         switch (choice) {

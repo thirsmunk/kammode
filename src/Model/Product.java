@@ -2,16 +2,19 @@ package Model;
 
 public class Product {
 
+    //Variables declared
     private String productName;
     private String productDescription;
     private int productPrice;
     private int stock;
     private Order owner;
 
+    //No-arg constructor
     public Product() {
 
     }
 
+    //Constructor with parameters
     public Product(String productName, String productDescription, int productPrice, int stock, Order o) {
         this.productName = productName;
         this.productDescription = productDescription;
@@ -20,6 +23,7 @@ public class Product {
         this.owner = o;
     }
 
+    //Getters & setters
     public String getProductName() {
         return productName;
     }
