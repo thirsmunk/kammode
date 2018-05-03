@@ -16,8 +16,8 @@ public class MainController {
     public MainController() {
         db = new DB();
         cw = new ConsoleView();
-        //Transmits initialized object to the PantController class
-        pc = new PantController(db);
+        //Transmits initialized objects to the PantController class
+        pc = new PantController(db, cw);
     }
 
     public void run() {
@@ -33,13 +33,15 @@ public class MainController {
                 break;
             case 4: //Show Suits
                 break;
-            case 5: pc.showPants();
+            case 5:
+                pc.showPants();
                 break;
-            default: System.out.println("You didn't select a number from 1-4");
+            default:
+                System.out.println("You didn't select a number from 1-4");
                 break;
         }
     }
 
 
-    }
+}
 
