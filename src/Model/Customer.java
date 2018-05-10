@@ -2,6 +2,7 @@ package Model;
 
 import java.util.HashMap;
 
+//Not in use yet
 public class Customer {
 
     private String name;
